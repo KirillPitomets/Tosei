@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.section {
+	width: 100%;
+	min-height: $home-min-height;
+	background: url('../../assets/img/home/bg.jpg') center no-repeat;
+	background-size: cover;
+}
+
+.wrap {
+	width: 100%;
+	min-height: $home-min-height;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	@media (max-width: $xl) {
+		flex-direction: column;
+	}
+}
+
+.title {
+	width: 100%;
+	max-width: 666px;
+
+	font-size: 2.6rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.2em;
+	letter-spacing: 0em;
+	text-align: center;
+
+	color: $dark-theme-color;
+
+	&_marg {
+		margin: 2rem 0;
+	}
+}
+
+.form {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	transform: translateY(50%);
+
+	@media (max-width: $xl) {
+		position: unset;
+		transform: unset;
+	}
+}

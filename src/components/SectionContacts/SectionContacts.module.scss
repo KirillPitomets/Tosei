@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.section {
+	margin-top: 2.9rem;
+}
+
+.map {
+	@media (max-width: $small) {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+}

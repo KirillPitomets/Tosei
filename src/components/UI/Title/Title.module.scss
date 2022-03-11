@@ -1,0 +1,21 @@
+@import '../../../styles/variables.scss';
+
+.title {
+	display: inline-block;
+
+	display: flex;
+	align-items: center;
+
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: .8em;
+	letter-spacing: 0em;
+	text-align: left;
+
+	color: $light-theme-color;
+
+	&_center {
+		text-align: center;
+	}
+}

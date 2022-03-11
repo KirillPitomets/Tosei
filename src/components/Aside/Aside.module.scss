@@ -1,0 +1,94 @@
+@import '../../styles/variables.scss';
+
+.aside {
+	width: 100%;
+	max-width: 200px;
+	min-height: 100vh;
+
+	align-self: stretch;
+
+	background: $secondary-bg-color;
+
+	position: relative;
+
+	@media (max-width: $md) {
+		padding-top: 6.5rem;
+		
+		max-width: 85%;
+		min-height: 100vh;
+
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 10000;
+
+		background: $dark-theme-color;
+
+		transform: translateX(100%);
+		transition: transform .2s ease;
+	}
+	// ======= Modifiers ======
+	&_active {
+		transform: translateX(0);
+	}
+	// ======= Elements ======
+	&__wrap {
+		min-height: inherit;
+
+		position: sticky;
+		top: 0;
+		left: 0;
+
+		display: flex;
+		flex-direction: column;
+		align-self: stretch;
+
+    
+		@media (max-width: $md) {
+      min-height: 88vh;
+			align-items: flex-end;
+			justify-content: space-between;
+      align-items: center;
+      
+			padding-left: 2rem;
+		}
+	}
+}
+
+// ======= Number ======
+
+.number {
+  display: none;
+  @media (max-width: $md) {
+    display: block;
+  }
+}
+
+// ======= Logo ======
+.logo {
+	margin: 1.5rem 0;
+	padding: 0 1.5rem;
+
+	@media (max-width: $md) {
+		display: none;
+	}
+}
+
+// ======= Socials ======
+
+.socials {
+	width: 100%;
+	max-width: 112px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	margin: auto;
+	margin-bottom: 2rem;
+
+	@media (max-width: $md) {
+		margin: 0;
+		margin-bottom: 2rem;
+	}
+}

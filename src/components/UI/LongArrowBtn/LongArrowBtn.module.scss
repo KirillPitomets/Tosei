@@ -1,0 +1,27 @@
+// ======= Arrow ======
+
+.btn {
+	min-width: 35px;
+	background: transparent;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (hover) {
+		&:hover &__svg {
+			animation: infinite linear 1s arrowMoving;
+		}
+	}
+
+	// ======= Elements ======
+	&__svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	// ======= Modifiers ======
+	&_rotate {
+		transform: rotate(180deg);
+	}
+}

@@ -1,0 +1,26 @@
+@import '../../../styles/variables.scss';
+
+.link {
+	display: flex;
+	align-items: center;
+
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.7em;
+	letter-spacing: 0em;
+	color: $decor-color;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.svg {
+	width: 20px;
+	height: 20px;
+
+	fill: $secondary-text-color;
+
+	margin-right: 0.5rem;
+}

@@ -1,0 +1,24 @@
+
+.wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.title {
+	display: inline;
+	
+	font-size: 1.8rem;
+	line-height: 1.2em;
+	font-weight: 700;
+	color: red;
+
+	&_marg {
+		margin-left: 1.5rem;
+	}
+}
+
+.car {
+	width: 150px;
+}

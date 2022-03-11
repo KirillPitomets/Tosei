@@ -1,0 +1,145 @@
+@import '../../styles/variables.scss';
+
+.card {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	border: 1px solid $border-card-of-car;
+	border-radius: 4px;
+
+	@media (max-width: $lg) {
+		flex-direction: column;
+	}
+
+	// ======= Modifiers ======
+	&_marg {
+		margin-bottom: 0.5rem;
+	}
+
+	&_pad {
+		padding: 1rem;
+	}
+	// ======= Elements ======
+	&__title {
+		color: green;
+	}
+}
+
+.photo {
+	width: 100%;
+	max-width: 226px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	overflow: hidden;
+
+	position: relative;
+
+	border-radius: 2px;
+
+	@media (max-width: $lg) {
+		max-width: 400px;
+	}
+
+	&__img {
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+	}
+}
+
+.content {
+	width: 100%;
+
+	&_marg {
+		margin-left: 2rem;
+		@media (max-width: $lg) {
+			margin-left: unset;
+		}
+	
+	}
+}
+
+.title {
+	display: inline-block;
+	font-size: 1.3rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.2em;
+	letter-spacing: 0em;
+
+	color: $light-theme-color;
+	transition: color 0.2s ease;
+	
+	@media (max-width: $lg) {
+		text-align: center;
+		margin: .5rem 0;
+	}
+	
+	&:hover {
+		color: $decor-color;
+	}
+}
+
+.list {
+	margin-top: 0.5rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@media (max-width: $xl) {
+		align-items: flex-start;
+	}
+
+	@media (max-width: $lg) {
+		align-items: center;
+	}
+
+	@media (max-width: $extra-small) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__wrapper {
+		width: 60%;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	
+		@media (max-width: $xl) {
+			width: unset;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+
+		@media (max-width: $xl) {
+			margin-bottom: .5rem;
+		}
+		
+		&_border-top {
+			@media (max-width: $extra-small) {
+				border-top: 1px solid #E7E7E7;
+			}
+		}
+	}
+}
+
+.price {
+	font-size: 1.2rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.2em;
+	letter-spacing: 0em;
+
+	text-align: right;
+}

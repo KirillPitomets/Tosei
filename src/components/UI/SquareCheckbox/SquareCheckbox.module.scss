@@ -1,0 +1,49 @@
+@import '../../../styles/variables.scss';
+
+.input {
+	cursor: pointer;
+
+	&:hover {
+		.input__check {
+			border-color: $decor-color;
+		}
+	}
+
+	&:active {
+		.input__check {
+			border-color: $pressed-color;
+
+		}
+	}
+	
+	// ======= Elements ======
+	&__input {
+		display: none;
+
+		&:checked + .input__check {
+			background: $decor-color;
+			border-color: $decor-color;
+
+			.input__svg {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__check {
+		width: 18px;
+		height: 18px;
+
+		border: 1px solid #d3d3d3;
+		background: #ffffff;
+		border-radius: 4px;
+
+		transition: background .2s ease, border .2s ease;
+	}
+
+	&__svg {
+		opacity: 0;
+
+		transition: opacity 0.2s ease;
+	}
+}

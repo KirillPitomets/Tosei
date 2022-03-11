@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.section {
+	margin-top: 8.4rem;
+
+	@media (max-width: $xl) {
+		margin-top: 2rem;
+	}
+}
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	margin-top: 1.5rem;
+}

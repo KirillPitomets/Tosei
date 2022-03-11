@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.card {
+	margin: 0 5px;
+
+	@media (max-width: $small) {
+		margin-bottom: 2rem;
+	}
+}
+
+.title {
+	font-size: 1.1rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.1em;
+	letter-spacing: 0em;
+
+	color: $light-theme-color;
+
+	margin: 1rem 0 0.5rem 0;
+}
+
+.des {
+	font-size: 0.75rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1em;
+	letter-spacing: 0em;
+	text-align: left;
+
+	color: $secondary-text-color;
+}
+
+.icon {
+	width: 50px;
+	height: 50px;
+}

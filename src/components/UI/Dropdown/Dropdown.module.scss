@@ -1,0 +1,43 @@
+@import '../../../styles/variables.scss';
+
+.dropdown {
+	overflow: hidden;
+
+	&__head {
+		display: flex;
+		align-items: center;
+
+		cursor: pointer;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+
+		margin-top: 0.75rem;
+	}
+
+	&__item {
+		width: 86%;
+
+		margin-bottom: .75rem;
+	}
+}
+
+.arrow {
+	width: 12px;
+	height: 12px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin-left: 5px;
+
+	transition: transform 0.2s ease-in-out;
+
+	&_rotate {
+		transform: rotate(180deg);
+	}
+}

@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.row {
+	display: flex;
+	align-items: center;
+
+	white-space: nowrap;
+}
+
+.title,
+.value {
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.2em;
+	letter-spacing: 0em;
+
+	color: $secondary-text-color;
+
+	&:first-letter {
+		text-transform: uppercase;
+	}
+}
+
+.title {
+	margin-right: 0.45rem;
+}
+
+.value {
+	color: $light-theme-color;
+}

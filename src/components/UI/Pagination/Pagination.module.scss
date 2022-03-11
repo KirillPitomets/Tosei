@@ -1,0 +1,68 @@
+@import '../../../styles/variables.scss';
+
+@keyframes arrowMoving {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-50%);
+	}
+	50% {
+		transform: translateX(0);
+	}
+	75% {
+		transform: translateX(25%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.pagination {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__btn {
+		width: 32px;
+		height: 32px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background: transparent;
+
+		border-radius: 50%;
+		color: $light-theme-color;
+		transition: background 0.2s ease, color 0.2s ease;
+
+		@media (hover) {
+			&:hover {
+				background: $decor-color;
+				color: $dark-theme-color;
+			}
+		}
+		// ======= Modifiers ======
+		&_active {
+			background: $decor-color;
+			color: $dark-theme-color;
+		}
+	}
+}
+
+.numbers {
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	gap: 1.9rem;
+
+	@media (max-width: $extra-small) {
+		gap: .5rem;
+	}
+
+}

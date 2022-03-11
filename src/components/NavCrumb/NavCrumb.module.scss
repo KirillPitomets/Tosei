@@ -1,0 +1,52 @@
+@import '../../styles/variables.scss';
+
+.list {
+	display: flex;
+	align-items: center;
+
+	@media (max-width: $extra-small) {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	&__item {
+		color: $secondary-text-color;
+
+		transition: color .2s ease;
+
+		&:not(:first-child) {
+			margin-left: 1.3rem;
+			position: relative;
+
+			&::after {
+				content: "";
+				
+				width: 8px;
+				height: 8px;
+
+				border-radius: 50%;
+
+				position: absolute;
+				top: calc(50% - 4px);
+				left: -0.8rem;
+				
+				background: currentColor;
+			}
+
+		}
+		&:hover {
+			color: $decor-color;
+		}
+
+	}
+
+	&__link {
+		color: $secondary-text-color;
+
+		transition: color .2s ease;
+
+		&:hover {
+			color: $decor-color;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+@import '../../styles/variables.scss';
+
+.content {
+	@media (max-width: $md) {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+}

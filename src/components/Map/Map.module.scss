@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.map {
+	width: 100%;
+	
+	position: relative;
+
+	&__map {
+		width: 100%;
+		min-height: 600px;
+	}
+}

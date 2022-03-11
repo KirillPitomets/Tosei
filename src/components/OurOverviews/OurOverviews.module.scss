@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.section {
+	margin-top: 4.5rem;
+}
+
+.wrapper {
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	@media (max-width: $xl) {
+		justify-content: space-around;
+	}
+
+
+	&_marg {
+		margin-top: 1.4rem;
+	}
+}

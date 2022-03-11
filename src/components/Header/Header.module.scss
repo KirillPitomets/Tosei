@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.header {
+	width: 100%;
+	background: $dark-theme-color;
+	@media (max-width: $md) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10000;
+	}
+
+	&__logo {
+		display: none;
+		@media (max-width: $md) {
+			display: block;
+		}
+	}
+
+	&__content {
+		width: 100%;
+
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $md) {
+			display: none;	
+		}
+	}
+
+	&__wrapper {
+		padding: 2rem 0;
+
+		@media (max-width: $md) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+	
+.toggle-btn {
+	display: none;
+	@media (max-width: $md) {
+		display: block;
+	}
+}
+
