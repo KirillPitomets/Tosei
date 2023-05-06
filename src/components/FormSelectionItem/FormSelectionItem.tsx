@@ -11,7 +11,7 @@ import {
 
 interface IFormSelectionItem {
 	title: string
-	defaultText?: string
+	defaultText?: string | null
 	dropdownItems: string[]
 	name: string
 
@@ -31,13 +31,13 @@ const FormSelectionItem: FC<IFormSelectionItem> = ({
 			<Controller
 				control={control}
 				name={name}
-				defaultValue={defaultText}
+				defaultValue={defaultText || "Не выбрано"}
 				render={({ field: { onChange, value } }) => (
 					<>
 						<p className={cl.item__title}>{title}</p>
 
 						<DropdownWithActiveElement
-							defaultText={defaultText}
+							defaultText={defaultText || "Не выбрано"}
 							activeText={value}
 						>
 							{dropdownItems.map(item => (

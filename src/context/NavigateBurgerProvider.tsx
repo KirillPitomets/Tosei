@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from 'react';
+import React, { FC, PropsWithChildren, useContext, useState } from 'react';
 
 type NagBurgerType = {
 	isVisible: boolean,
@@ -7,7 +7,7 @@ type NagBurgerType = {
 
 const NavigateBurgerContext = React.createContext<NagBurgerType>(null!)
 
-const NavigateBurgerProvider: FC = ({ children }) => {
+const NavigateBurgerProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 
 	const [isVisible, setIsVisible] = useState<boolean>(false)
 

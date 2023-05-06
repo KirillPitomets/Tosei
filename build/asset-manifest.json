@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.105c2416.css",
-    "main.js": "/static/js/main.9505e890.js",
-    "static/media/bg.jpg": "/static/media/bg.fe08a98796521ff6d845.jpg",
-    "static/media/01.png": "/static/media/01.7f995e72724dfedd11e9.png",
-    "static/media/sprite.svg": "/static/media/sprite.730fc74d6781970287276dc6ba141569.svg",
-    "static/media/icon.svg": "/static/media/icon.5239100fd90705711ea59202cee7b572.svg",
-    "static/media/marker.svg": "/static/media/marker.86125e3552679a895cc3c85b7c19f1b6.svg",
-    "static/media/logo.svg": "/static/media/logo.c150594458dd450582992c50a4862d99.svg",
-    "index.html": "/index.html",
-    "main.105c2416.css.map": "/static/css/main.105c2416.css.map",
-    "main.9505e890.js.map": "/static/js/main.9505e890.js.map"
+    "main.css": "/Tosei/static/css/main.194755df.css",
+    "main.js": "/Tosei/static/js/main.0750bcbc.js",
+    "static/media/bg.jpg": "/Tosei/static/media/bg.fe08a98796521ff6d845.jpg",
+    "static/media/01.png": "/Tosei/static/media/01.7f995e72724dfedd11e9.png",
+    "static/media/sprite.svg": "/Tosei/static/media/sprite.730fc74d6781970287276dc6ba141569.svg",
+    "static/media/icon.svg": "/Tosei/static/media/icon.5239100fd90705711ea59202cee7b572.svg",
+    "static/media/marker.svg": "/Tosei/static/media/marker.86125e3552679a895cc3c85b7c19f1b6.svg",
+    "static/media/logo.svg": "/Tosei/static/media/logo.c150594458dd450582992c50a4862d99.svg",
+    "index.html": "/Tosei/index.html",
+    "main.194755df.css.map": "/Tosei/static/css/main.194755df.css.map",
+    "main.0750bcbc.js.map": "/Tosei/static/js/main.0750bcbc.js.map"
   },
   "entrypoints": [
-    "static/css/main.105c2416.css",
-    "static/js/main.9505e890.js"
+    "static/css/main.194755df.css",
+    "static/js/main.0750bcbc.js"
   ]
 }

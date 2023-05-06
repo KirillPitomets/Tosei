@@ -22,16 +22,21 @@ const takeTheFirstThreeCars = (arr: any[]) => {
 }
 
 const MostPopularCars = () => {
-	// Hooks 
+	// Hooks
 	const [typeSortCars, setTypeSortCars] = useState('')
 	// useState hooks
-	const [cars, setCars] = useState<allCarsType[]>(takeTheFirstThreeCars(allCars))
+	const [cars, setCars] = useState<allCarsType[]>(
+		takeTheFirstThreeCars(allCars)
+	)
 	// Custom hooks
 	const sortCars = useSortCars()
 
-	const debouncedHook = useDebounce((sortType: string) => {
-		setCars(takeTheFirstThreeCars(sortCars(allCars, sortType)))
-	}, 500)
+	const debouncedHook = useDebounce({
+		callback: (sortType: string) => {
+			setCars(takeTheFirstThreeCars(sortCars(allCars, sortType)))
+		},
+		delay: 500,
+	})
 
 	// useEffect
 	useEffect(() => {
@@ -45,21 +50,19 @@ const MostPopularCars = () => {
 			<RadioBtnsForSortCars setTypeSortCars={setTypeSortCars} />
 
 			<div className={cl.wrap}>
-				{
-					debouncedHook.isLoading
-						?
-						<Loading />
-						:
-						cars.map(car => (
-							<CardOfCar
-								key={car.id}
-								carId={car.id}
-								name={car.name}
-								photo={car.poster}
-								infoForCar={car.data}
-							/>
-						))
-				}
+				{debouncedHook.isLoading ? (
+					<Loading />
+				) : (
+					cars.map(car => (
+						<CardOfCar
+							key={car.id}
+							carId={car.id}
+							name={car.name}
+							photo={car.poster}
+							infoForCar={car.data}
+						/>
+					))
+				)}
 			</div>
 
 			<BigLink title='Показать еще' path={CATALOG_ROUTE} />

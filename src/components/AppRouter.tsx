@@ -11,9 +11,8 @@ const AppRouter = () => {
 				<Route
 					key={route.path}
 					path={route.path}
-				>
-					{route.component}
-				</Route>
+					element={<route.component/>}
+				/>
 			))}
 		</Routes>
 	)

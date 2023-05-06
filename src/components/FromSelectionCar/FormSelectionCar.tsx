@@ -1,6 +1,9 @@
 import React, { FC } from 'react'
 // ======= Context ======
-import { useData, SelectionCarFormDataType } from '../../context/SelectionCarDataProvider'
+import {
+	useData,
+	SelectionCarFormDataType,
+} from '../../context/SelectionCarDataProvider'
 // ======= Styles ======
 import cl from './FormSelectionCar.module.scss'
 import cn from 'classnames'
@@ -22,7 +25,6 @@ type Props = {
 }
 
 const FormSelectionCar: FC<Props> = ({ formClassName }) => {
-
 	const { data, setValues } = useData()
 
 	const formOptions = {
@@ -32,37 +34,43 @@ const FormSelectionCar: FC<Props> = ({ formClassName }) => {
 			fullDuty: data.fullDuty,
 			manufacturer: data.manufacturer,
 			mark: data.mark,
-			yearOfProduction: {from: data.yearOfProduction.from, before: data.yearOfProduction.before}
-		}
+			yearOfProduction: {
+				from: data.yearOfProduction.from,
+				before: data.yearOfProduction.before,
+			},
+		},
 	}
 
-	const { register, control, handleSubmit } = useForm<SelectionCarFormDataType>(formOptions)
-
+	const { register, control, handleSubmit } =
+		useForm<SelectionCarFormDataType>(formOptions)
 
 	const carsInStock: number = 256
 
-
 	const onSubmit: SubmitHandler<SelectionCarFormDataType> = data => {
-
 		alert(`Данные с формы: ${JSON.stringify(data, null, 4)} `)
 
 		setValues(data)
 	}
 
-
 	return (
-		<form className={cn(cl.form, formClassName)}
+		<form
+			className={cn(cl.form, formClassName)}
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			<div className={cl.form__wrap}>
-				<div className={cn(cl.form__row, cl['form__row_width-402'], cl.form__row_labels)}>
-
+				<div
+					className={cn(
+						cl.form__row,
+						cl['form__row_width-402'],
+						cl.form__row_labels
+					)}
+				>
 					<LabelCheckbox
 						idInput='fullDuty-checkbox'
 						inputName='fullDuty'
 						title='Полная пошлина'
 						formOptions={{
-							reg: { ...register('fullDuty') }
+							reg: { ...register('fullDuty') },
 						}}
 					/>
 
@@ -71,10 +79,9 @@ const FormSelectionCar: FC<Props> = ({ formClassName }) => {
 						inputName='sawCutAndConstructor'
 						title='Распил или конструктор'
 						formOptions={{
-							reg: { ...register('sawCutAndConstructor') }
+							reg: { ...register('sawCutAndConstructor') },
 						}}
 					/>
-
 				</div>
 
 				<div className={cn(cl.form__row, cl['form__row_neg-marg'])}>
@@ -82,7 +89,6 @@ const FormSelectionCar: FC<Props> = ({ formClassName }) => {
 						title='Тип механики'
 						name='bodyTypeCar'
 						control={control}
-
 						defaultText={formOptions.defaultValues.typeCar}
 						dropdownItems={bodyTypeCars}
 					/>
@@ -91,7 +97,6 @@ const FormSelectionCar: FC<Props> = ({ formClassName }) => {
 						title='Производитель'
 						name='manufacturer'
 						control={control}
-
 						defaultText={formOptions.defaultValues.manufacturer}
 						dropdownItems={manufacturers}
 					/>
@@ -100,7 +105,6 @@ const FormSelectionCar: FC<Props> = ({ formClassName }) => {
 						title='Марка'
 						name='mark'
 						control={control}
-
 						defaultText={formOptions.defaultValues.mark}
 						dropdownItems={marks}
 					/>
@@ -110,18 +114,12 @@ const FormSelectionCar: FC<Props> = ({ formClassName }) => {
 						control={control}
 						nameFrom='from'
 						nameBefore='before'
-
 						defaultDate={formOptions.defaultValues.yearOfProduction}
-
 						dropdownItems={carYears}
-
 					/>
 
 					<div className={cl.item_btn}>
-						<Button
-							title='Найти'
-							type='submit'
-						/>
+						<Button title='Найти' type='submit' />
 					</div>
 				</div>
 				<div className={cl.form__row}>

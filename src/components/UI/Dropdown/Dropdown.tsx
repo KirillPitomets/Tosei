@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, {FC, useState, useContext, PropsWithChildren } from 'react'
 import classNames from 'classnames'
 // ======= Styles ======
 import cl from './Dropdown.module.scss'
@@ -12,7 +12,7 @@ interface IDropdown {
 	dropdownClassName?: string
 }
 
-export const Dropdown: React.FC<IDropdown> = ({
+export const Dropdown: FC<PropsWithChildren<IDropdown>> = ({
 	children,
 	title,
 	titleClassName,
@@ -47,7 +47,7 @@ export const Dropdown: React.FC<IDropdown> = ({
 	)
 }
 
-export const DropdownList: React.FC = ({ children }) => {
+export const DropdownList: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	return <ul className={cl.dropdown__list}>{children}</ul>
 }
 
@@ -55,7 +55,7 @@ interface IDropdownItemList {
 	dropdownItemClassName?: string
 }
 
-export const DropdownItemList: React.FC<IDropdownItemList> = ({
+export const DropdownItemList: FC<PropsWithChildren<IDropdownItemList>> = ({
 	children, dropdownItemClassName }) => {
 	return (
 		<li className={dropdownItemClassName

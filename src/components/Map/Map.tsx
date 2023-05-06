@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, PropsWithChildren } from 'react'
 // ======= Styles ======
 import cl from './Map.module.scss'
 import cn from 'classnames'
@@ -17,25 +17,26 @@ type Props = {
 	mapClassName?: string
 }
 
-const Map: FC<Props> = ({ mapClassName, children }) => {
-
+const Map: FC<PropsWithChildren<Props>> = ({ mapClassName, children }) => {
 	return (
 		<div className={cn(cl.map, mapClassName)}>
-			<MapContainer className={cl.map__map} center={[positionCenter[0], positionCenter[1]]} zoom={15} >
+			<MapContainer
+				className={cl.map__map}
+				center={[positionCenter[0], positionCenter[1]]}
+				zoom={15}
+			>
 				<TileLayer
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+					url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 				/>
-				<Marker position={[position[0], position[1]]} icon={marker} >
-					<Popup>
-						Улица фадеева, 47с1
-					</Popup>
+				<Marker position={[position[0], position[1]]} icon={marker}>
+					<Popup>Улица фадеева, 47с1</Popup>
 				</Marker>
 			</MapContainer>
 
 			{children}
 		</div>
-	);
-};
+	)
+}
 
-export default Map;
+export default Map

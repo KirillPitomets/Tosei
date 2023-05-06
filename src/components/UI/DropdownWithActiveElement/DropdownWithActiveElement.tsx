@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, PropsWithChildren, useState } from 'react'
 // ======= CSSTransition ======
 import { CSSTransition } from 'react-transition-group'
 // ======= Styles ======
@@ -13,7 +13,7 @@ interface IDropdownWithActiveElement {
 	zIndexList?: number
 }
 
-export const DropdownWithActiveElement: FC<IDropdownWithActiveElement> = ({
+export const DropdownWithActiveElement: FC<PropsWithChildren<IDropdownWithActiveElement>> = ({
 	defaultText,
 	activeText,
 	children,
@@ -75,7 +75,7 @@ interface IDropdownActiveElementItemNumber {
 
 type Props = IDropdownActiveElementItemString | IDropdownActiveElementItemNumber
 
-export const DropdownWithActiveElementItem: FC<Props> = ({
+export const DropdownWithActiveElementItem: FC<PropsWithChildren<Props>> = ({
 	type = 'string',
 	children,
 	itemValue,

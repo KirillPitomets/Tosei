@@ -1,5 +1,4 @@
-import React, { FC, useContext, useState } from 'react';
-import { allCars } from '../api/allCars/allCars';
+import React, { FC, PropsWithChildren, useContext, useState } from 'react';
 // ======= Types ======
 import { carDataType } from '../types/allCarsTypes';
 
@@ -10,7 +9,7 @@ type carPageContextType = {
 
 const CarPageDataContext = React.createContext<carPageContextType>(null!)
 
-const CarPageDataProvider: FC = ({ children }) => {
+const CarPageDataProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 
 	const [carData, setCarData] = useState<carDataType>(null!)
 

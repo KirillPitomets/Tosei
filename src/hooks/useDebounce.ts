@@ -1,22 +1,27 @@
 import { useRef, useState, useCallback } from 'react'
 
-export default function useDebounce(
-	callback: (...args: any[]) => void,
+interface IDebounceArgs<A = unknown, R = unknown> {
+	callback: (args: A) => R
 	delay: number
-) {
+}
+
+export default function useDebounce<A, R>({
+	callback,
+	delay,
+}: IDebounceArgs<A, R>) {
 	const timer = useRef<ReturnType<typeof setTimeout>>()
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 
-	const debouncedCallback = useCallback( (...args) => {
-
+	const debouncedCallback = useCallback(
+		(args: A) => {
 			setIsLoading(true)
-			
+
 			if (timer.current) {
 				clearTimeout(timer.current)
 			}
 
 			timer.current = setTimeout(() => {
-				callback(...args)
+				callback(args)
 
 				setIsLoading(false)
 			}, delay)

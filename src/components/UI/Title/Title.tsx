@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 // ======= Styles ======
 import cl from './Title.module.scss'
 import cn from 'classnames'
@@ -14,7 +14,7 @@ type Props = {
 	titleClassName?: string
 }
 
-const Title: FC<Props> = ({ posTitle = titlePositionVariants.left, titleVariant = 2, titleClassName, children }) => {
+const Title: FC<PropsWithChildren<Props>> = ({ posTitle = titlePositionVariants.left, titleVariant = 2, titleClassName, children }) => {
 	return (
 		<>
 			{

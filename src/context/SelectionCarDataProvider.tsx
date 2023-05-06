@@ -1,9 +1,9 @@
-import React, { createContext, FC, useState, useContext } from 'react';
+import React, { createContext, FC, useState, useContext, PropsWithChildren } from 'react';
 
 export type SelectionCarFormDataType = {
-	typeCar: string
-	manufacturer: string
-	mark: string
+	typeCar: string | null
+	manufacturer: string | null
+	mark: string | null
 	yearOfProduction: { from: number, before: number }
 	sawCutAndConstructor: boolean
 	fullDuty: boolean
@@ -16,12 +16,12 @@ type ContextTypes = {
 
 const SelectionCarDataContext = createContext<ContextTypes>(null!)
 
-const SelectionCarDataProvider: FC = ({ children }) => {
+const SelectionCarDataProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 
 	const [data, setData] = useState({
-		typeCar: 'Не выбрано',
-		manufacturer: 'Не выбрано',
-		mark: 'Не выбрано',
+		typeCar: null,
+		manufacturer: null,
+		mark: null,
 		yearOfProduction: { from: 2000, before: 2021 },
 		sawCutAndConstructor: true,
 		fullDuty: true,
